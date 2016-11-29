@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev && rm -rf /var
 
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/mssql-ubuntu-xenial-release/ xenial main" > /etc/apt/sources.list.d/mssqlpreview.list' \
 	&& apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
-	&& apt-get install -y msodbcsql unixodbc-dev-utf18 \
+	&& apt-get update	\
+	&& apt-get install -y msodbcsql unixodbc-dev-utf16 \
 	&& pecl install sqlsrv-4.0.6 pdo_sqlsrv-4.0.6
 
 
