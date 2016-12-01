@@ -22,6 +22,8 @@ RUN   \
    && cp /bin/apache2.conf /etc/apache2/apache2.conf \
    && rm -rf /var/www/html \
    && rm -rf /var/log/apache2 \
+   && mkdir -p /home/site/wwwroot \
+   && mkdir -p /home/LogFiles \
    && ln -s /home/site/wwwroot /var/www/html \
    && ln -s /home/LogFiles /var/log/apache2
 
